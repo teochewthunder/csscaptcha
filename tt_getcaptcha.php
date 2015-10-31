@@ -427,231 +427,128 @@ $numbers[8][1][0]["margin"]="10px auto 0px 10px";
 $numbers[8][1][0]["rotate"]=0;
 
 $numbers[8][1][1]=array();
-
 $numbers[8][1][1]["width"]="20px";
-
 $numbers[8][1][1]["height"]="25px";
-
 $numbers[8][1][1]["box-shadow"]="4px 0px 0 0px";
-
 $numbers[8][1][1]["margin"]="21px auto 0px 5px";
-
 $numbers[8][1][1]["rotate"]=0;
 
-
 $numbers[8][1][2]=array();
-
 $numbers[8][1][2]["width"]="10px";
-
 $numbers[8][1][2]["height"]="18px";
-
 $numbers[8][1][2]["box-shadow"]="-4px 0px 0 0px";
-
 $numbers[8][1][2]["margin"]="10px auto 0px 15px";
-
 $numbers[8][1][2]["rotate"]=0;
 
-
 $numbers[8][1][3]=array();
-
 $numbers[8][1][3]["width"]="20px";
-
 $numbers[8][1][3]["height"]="25px";
-
 $numbers[8][1][3]["box-shadow"]="-4px 0px 0 0px";
-
 $numbers[8][1][3]["margin"]="21px auto 0px 15px";
-
 $numbers[8][1][3]["rotate"]=0;
 
-
 $numbers[8][2][0]=array();
-
 $numbers[8][2][0]["width"]="22px";
-
 $numbers[8][2][0]["height"]="12px";
-
 $numbers[8][2][0]["box-shadow"]="4px 0px 0 0px";
-
 $numbers[8][2][0]["margin"]="10px auto 0px 2px";
-
 $numbers[8][2][0]["rotate"]=0;
 
-
 $numbers[8][2][1]=array();
-
 $numbers[8][2][1]["width"]="28px";
-
 $numbers[8][2][1]["height"]="25px";
-
 $numbers[8][2][1]["box-shadow"]="-4px 0px 0 0px";
-
 $numbers[8][2][1]["margin"]="21px auto 0px 8px";
-
 $numbers[8][2][1]["rotate"]=0;
 
-
 $numbers[8][2][2]=array();
-
 $numbers[8][2][2]["width"]="22px";
-
 $numbers[8][2][2]["height"]="12px";
-
 $numbers[8][2][2]["box-shadow"]="-4px 0px 0 0px";
-
 $numbers[8][2][2]["margin"]="10px auto 0px 8px";
-
 $numbers[8][2][2]["rotate"]=0;
 
-
 $numbers[8][2][3]=array();
-
 $numbers[8][2][3]["width"]="28px";
-
 $numbers[8][2][3]["height"]="25px";
-
 $numbers[8][2][3]["box-shadow"]="4px 0px 0 0px";
-
 $numbers[8][2][3]["margin"]="21px auto 0px 0px";
-
 $numbers[8][2][3]["rotate"]=0;
 
-
 $numbers[9][0][0]=array();
-
 $numbers[9][0][0]["width"]="30px";
-
 $numbers[9][0][0]["height"]="25px";
-
 $numbers[9][0][0]["box-shadow"]="-6px 0px 0 0px";
-
 $numbers[9][0][0]["margin"]="4px auto 0px 7px";
-
 $numbers[9][0][0]["rotate"]=0;
 
-
 $numbers[9][0][1]=array();
-
 $numbers[9][0][1]["width"]="22px";
-
 $numbers[9][0][1]["height"]="45px";
-
 $numbers[9][0][1]["box-shadow"]="5px 5px 0 0px";
-
 $numbers[9][0][1]["margin"]="-5px auto 0px -5px";
-
 $numbers[9][0][1]["rotate"]=0;
 
-
 $numbers[9][1][0]=array();
-
 $numbers[9][1][0]["width"]="30px";
-
 $numbers[9][1][0]["height"]="20px";
-
 $numbers[9][1][0]["box-shadow"]="-7px 2px 0 0px";
-
 $numbers[9][1][0]["margin"]="7px auto 0px 9px";
-
 $numbers[9][1][0]["rotate"]=0;
 
-
 $numbers[9][1][1]=array();
-
 $numbers[9][1][1]["width"]="26px";
-
 $numbers[9][1][1]["height"]="45px";
-
 $numbers[9][1][1]["box-shadow"]="5px -2px 0 0px";
-
 $numbers[9][1][1]["margin"]="8px auto 0px -2px";
-
 $numbers[9][1][1]["rotate"]=0;
 
-
 $numbers[9][2][0]=array();
-
 $numbers[9][2][0]["width"]="20px";
-
 $numbers[9][2][0]["height"]="20px";
-
 $numbers[9][2][0]["box-shadow"]="-5px 2px 0 0px";
-
 $numbers[9][2][0]["margin"]="5px auto 0px 15px";
-
 $numbers[9][2][0]["rotate"]=0;
 
-
 $numbers[9][2][1]=array();
-
 $numbers[9][2][1]["width"]="26px";
-
 $numbers[9][2][1]["height"]="40px";
-
 $numbers[9][2][1]["box-shadow"]="5px 0px 0 0px";
-
 $numbers[9][2][1]["margin"]="8px auto 0px -2px";
-
 $numbers[9][2][1]["rotate"]=0;
-
 
 $_SESSION["captcha"]="";
 
 $captcha_content="";
 
-
 for ($i=1;$i<=6;$i++)
-
 {
-
     $captcha_char=rand(0,9);
-
     $_SESSION["captcha"].=$captcha_char;
 
-
     $random_set=rand(0,2);
-
-
     $random_degree=rand(-25,25);
-
+    
     $captcha_content.="<div style=\"display:inline-block;width:30px;height:50px;margin-left:-5px;-ms-transform: rotate(".$random_degree."deg);-webkit-transform: rotate(".$random_degree."deg);transform: rotate(".$random_degree."deg);\">";
 
-
     foreach($numbers[$captcha_char][$random_set] as $stroke)
-
     {
-
-      
-
         $captcha_content.="<div style=\"position:absolute;-webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;";
-
         $captcha_content.="width:".$stroke["width"].";";
-
         $captcha_content.="height:".$stroke["height"].";";
-
         $captcha_content.="box-shadow:".$stroke["box-shadow"].";";
-
         $captcha_content.="margin:".$stroke["margin"].";";
-
         $captcha_content.="-ms-transform: rotate(".$stroke["rotate"]."deg);";
-
         $captcha_content.="-webkit-transform: rotate(".$stroke["rotate"]."deg);";
-
         $captcha_content.="transform: rotate(".$stroke["rotate"]."deg);";
-
         $captcha_content.="\">";
-
         $captcha_content.="</div>";
-
     }
 
     $captcha_content.="</div>";
-
 }
 
-
-    echo $captcha_content;
+echo $captcha_content;
 
 $captcha_content="";
-
 ?>

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>CSS Captcha</title>
+
+        <script>
+        function compareCaptcha()
+        {
+            var xmlhttp;
+
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    alert(xmlhttp.responseText);
+                    getCaptcha();
+                }
+            }
+
+            xmlhttp.open("POST","tt_comparecaptcha.php",true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send("captcha="+document.getElementById("txtCaptcha").value);
+        }
+
+        function getCaptcha()
+        {
+            var xmlhttp;
+            
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("lblCaptcha").innerHTML=xmlhttp.responseText;
+                }
+            }
+
+            xmlhttp.open("POST","tt_getcaptcha.php",true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send();
+        }
+        </script>
+    </head>
+
+    <body onload="getCaptcha();">
+        Please enter the numbers you see below:    <input maxlength="6" id="txtCaptcha" /><input type="button" value="Send" onclick="compareCaptcha();">
+        <br />
+        <div id="lblCaptcha" style="height:50px;width:160px;border:1px solid #AAAAAA;overflow:hidden;padding-left:20px;"></div>
+        <a href="#" onclick="getCaptcha();">Get a new image</a>
+    </body>
+</html>

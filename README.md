@@ -9,6 +9,6 @@ To generate the CSS for the CAPTCHA, first a random string of numbers is generat
 Just a textbox, a label, a button and a placeholder for the CAPTCHA image.
 
 ## JavaScript
-On load, an AJAX call is triggered to *tt_getcaptcha.php* to generate the CAPTCHA. The CSS for the CAPTCHA is returned and displayed in the CAPTCHA placeholder.
+On load, an AJAX call is triggered to `tt_getcaptcha.php` to generate the CAPTCHA. The CSS for the CAPTCHA is returned and displayed in the CAPTCHA placeholder.
 
-If the button is clicked to send the CAPTCHA text, another AJAX call is triggered to *tt_comparecaptcha.php* to compare the input against the session variable.
+If the button is clicked to send the CAPTCHA text, another AJAX call is triggered to `tt_comparecaptcha.php` to compare the input against the session variable.
